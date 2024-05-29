@@ -1,0 +1,143 @@
+Problem 1: To convert Farenheit to Celcius
+
+package Preparations_29_05_2024;
+import java.util.Scanner;
+public class FarenheitToCelcius {
+public static void main(String [] args) {
+	Scanner sc = new Scanner (System.in);
+	System.out.println("Enter Farenheit: ");
+			int n = sc.nextInt();
+	int temp = n; char c='c';
+	temp=(((n-32)*5)/9);
+	System.out.println("Celcius: "+temp+c);
+}
+}
+
+*******************************************************************************************************
+
+Problem 2: To Check Odd or Even Number
+
+package Preparations_29_05_2024;
+import java.util.Scanner;
+public class check_odd_or_even_number {
+public static void main(String[]args) {
+	Scanner sc = new Scanner(System.in);
+			System.out.println("Enter your number to check odd or even: ");
+			int num = sc.nextInt();
+			if(num%2==0) 
+				System.out.println("Entered Number "+num+" is Even Number");
+			else
+				System.out.println("Entered Number "+num+" is Odd Number");
+			
+}
+}
+
+*******************************************************************************************************
+
+Problem 3: To Swap 2 number with 3rd variable
+
+package Preparations_29_05_2024;
+import java.util.Scanner;
+public class swap_2_number_with_third_variable {
+public static void main(String[]args) {
+	int z;
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter 1st Number: ");
+	int x = sc.nextInt();
+	System.out.println("Enter 2st Number: ");
+	int y = sc.nextInt();
+	System.out.println("Enter numbers before Swapping: "+ "x= "+x+","+"y= "+y);
+	z=x;
+	x=y;
+	y=z;
+	System.out.println("After Swapping: "+ "x= "+x+ ","+" y=" +y);
+	
+}
+}
+
+*********************************************************************************************************
+
+Problem 4: To Swap 2 number without 3rd variable
+
+package Preparations_29_05_2024;
+import java.util.Scanner;
+public class swap_2_numbers_without_third_variable {
+public static void main(String[]args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter 1st number: ");
+	int x= sc.nextInt();
+	System.out.println("Enter 2nd number: ");
+	int y = sc.nextInt();
+	System.out.println("Before Swapping \nx= "+x+"\ny= "+y);
+	x=x+y;
+	y=x-y;
+	x=x-y;
+	System.out.println("After Swapping \nx= "+x+"\ny= "+y);
+}
+}
+
+*********************************************************************************************************
+
+Problem 5: To Reverse the Number
+
+package Preparations_29_05_2024;
+import java.util.Scanner;
+public class ReverseTheNumber {
+public static void main(String[]args) {
+	int reverse=0;
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the number to Reverse: ");
+	int n = sc.nextInt();
+	while(n!=0) {
+		reverse=reverse*10;
+		reverse=reverse+(n%10);
+		n=n/10;
+}
+System.out.println("The number reversed: "+reverse);
+}
+}
+
+*********************************************************************************************************
+
+Problem 6: To find Factorial of the given number
+
+package Preparations_29_05_2024;
+import java.util.Scanner;
+public class factorial {
+public static void main(String[]args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter Number:");
+	int n=sc.nextInt();
+	int fact=1;
+	for(int x=1;x<=n;x++)
+		fact=fact*x;
+	System.out.println("Factorial of the number is : "+fact);
+	
+}
+}
+
+********************************************************************************************************
+
+Problem 7: To compare Strings
+
+package Preparations_29_05_2024;
+import java.util.Scanner;
+public class compareStrings {
+public static void main(String[]args) {
+	String x,y;
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter String no 1: ");
+	 x = sc.nextLine();
+	System.out.println("Enter String no 2: ");
+	 y = sc.nextLine();
+	if(x.compareTo(y)>0)
+		System.out.println("String no 1 is larger than String no 2");
+	else if (y.compareTo(x)>0)
+		System.out.println("String no 2 is greater than String no 1");
+	else
+		System.out.println("Both the Strings are equal");
+	
+		
+	
+}
+}
