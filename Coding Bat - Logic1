@@ -133,3 +133,91 @@ public String alarmClock(int day, boolean vacation) {if (vacation) {
 
 
 *******************************************************************************************************************************
+We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11. Return true if the given non-negative number is special. Use the % "mod" operator -- see Introduction to Mod
+
+
+specialEleven(22) → true
+specialEleven(23) → true
+specialEleven(24) → false
+
+public boolean specialEleven(int n) {
+  return n%11==0 || n%11==1;
+}
+
+
+***************************************************************************************************************
+
+Return true if the given non-negative number is 1 or 2 more than a multiple of 20. See also: Introduction to Mod
+
+
+more20(20) → false
+more20(21) → true
+more20(22) → true
+
+public boolean more20(int n) {
+  return n%20==1 || n%20==2;
+}
+
+*************************************************************************************************************|
+
+Return true if the given non-negative number is a multiple of 3 or 5, but not both. Use the % "mod" operator -- see Introduction to Mod
+
+
+old35(3) → true
+old35(10) → true
+old35(15) → false
+
+public boolean old35(int n) {
+  return !(n%3==0 && n%5==0) && (n%3==0 || n%5==0) ;
+}
+
+
+**************************************************************************************************************
+
+
+
+Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and 39 return true, but 40 returns false. See also: Introduction to Mod
+
+
+less20(18) → true
+less20(19) → true
+less20(20) → false
+
+public boolean less20(int n) {
+  return n % 20 == 18 || n % 20 == 19;
+}
+
+****************************************************************************************************************
+
+Given a non-negative number "num", return true if num is within 2 of a multiple of 10. Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2. See also: Introduction to Mod
+
+
+nearTen(12) → true
+nearTen(17) → false
+nearTen(19) → true
+
+public boolean nearTen(int num) {
+  return num%10<=2 || num%10>=8 ;
+}
+
+
+****************************************************************************************************************
+
+Given 2 ints, a and b, return their sum. However, "teen" values in the range 13..19 inclusive, are extra lucky. So if either value is a teen, just return 19.
+
+
+teenSum(3, 4) → 7
+teenSum(10, 13) → 19
+teenSum(13, 2) → 19
+
+public int teenSum(int a, int b) {
+   if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19)) {
+            return 19;
+        }
+        
+        return a + b;
+    }
+
+
+*********************************************************************************************************************
+
