@@ -114,3 +114,38 @@ public class AddTwoMatrices {
 
 	}
 }
+
+*********************************************************************
+
+Java Program to Find Transpose of Matrix
+
+package array;
+
+public class Transpose {
+
+	static void transpose(int arr[][], int arr1[][]) {
+		for(int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr[i].length;j++) {
+				arr1[j][i]=arr[i][j];
+			}
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		int arr[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		int arr1[][] = new int[arr.length][arr.length];
+
+		transpose(arr, arr1);
+		System.out.println("The Transpose of arr[][] is: ");
+		for (int k = 0; k < arr1.length; k++) {
+			for (int l = 0; l < arr1.length; l++) {
+				System.out.print(arr1[k][l]);
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+
