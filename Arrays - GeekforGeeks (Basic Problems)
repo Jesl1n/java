@@ -149,3 +149,60 @@ public class Transpose {
 
 }
 
+**************************
+
+Java Array Program to Compute the Sum of Diagonals of a Matrix
+
+package array;
+
+public class SumofDiagonals {
+	public static void main(String[] args) {
+		int arr[][] = { { 6, 7, 3, 4 }, { 8, 9, 2, 1 }, { 1, 2, 9, 6 }, { 6, 5, 7, 2 } };
+
+		int sum1 = diagonal1(arr);
+		int sum2 = diagonal2(arr);
+
+		System.out.println("The Sum of diagonal 1 is: " + sum1);
+		System.out.println("The Sum of diagonal 2 is: " + sum2);
+
+	}
+
+	static int diagonal1(int arr[][]) {
+		int sum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			sum = sum + arr[i][i];
+		}
+		return sum;
+	}
+
+	static int diagonal2(int arr[][]) {
+		int sum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			sum = sum + arr[i][arr.length - 1 - i];
+		}
+		return sum;
+	}
+
+}
+
+*************************
+
+Check if a value is present in an Array in Java
+
+package array;
+
+public class LinearSearch {
+public static void main(String[] args) {
+	int arr[] = {5, 1, 1, 9, 7, 2, 6, 10}; int key = 7;
+	boolean result=false;
+	for(int i =0;i<arr.length;i++) {
+		if(arr[i]==key) {
+			result=true;
+			break;
+		}
+	}
+	System.out.println("key item present here is: "+result);
+	
+	
+	}
+}
