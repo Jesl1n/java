@@ -1,0 +1,43 @@
+package Training;
+
+public class IsBalanced {
+	static boolean checkbalanced(String str) {
+		char arr[]=str.toCharArray();
+		char stack[]= new char[arr.length];
+		int fill=-1;
+		if(arr[0]==')'||arr[0]==']'||arr[0]=='}') {
+			return false;
+		}
+		for(int i =0;i<arr.length;i++) {
+			if(arr[i]=='('||arr[i]=='['||arr[i]=='{') {
+				fill=fill+1;
+				stack[fill]=arr[i];
+			}
+			if((arr[i]==')' && stack[fill]=='(')||(arr[i]==']' && stack[fill]=='[')||(arr[i]=='}' && stack[fill]=='{')){
+				fill=fill-1;
+			}
+		}
+		return fill<0;
+	}
+public static void main(String[]args) {
+	// checkbalanced("(()())");
+	// checkbalanced("({()})");
+	// checkbalanced("(([]{}))");
+	// checkbalanced("([{}])");
+	//checkbalanced("((]]})");
+	// checkbalanced("((()()))");
+	// checkbalanced("(((())))");
+	// checkbalanced("](");
+	 boolean verify = checkbalanced("}(");
+	if (verify ==true){
+		System.out.println("Balanced");
+	}
+	else {
+		System.out.println("Unbalanced");
+
+	}
+}
+	
+	}	
+
+
