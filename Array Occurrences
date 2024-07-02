@@ -1,0 +1,28 @@
+package ZohoArray;
+
+public class ArrayOccurences {
+
+	public static void main(String[] args) {
+		int arr[] = {2,1,3,2,2,5,8,9,8};
+		int[][] twodim = new int[2][arr.length];
+
+		for(int i=0;i<arr.length;i++) {
+			for(int j = 0;j<arr.length;j++) {
+				if(twodim[0][j] == 0 ) {
+					twodim[0][j] = arr[i];
+					twodim[1][j] = 1;
+					break;
+				} else if( twodim[0][j] == arr[i]) {
+					twodim[1][j] = twodim[1][j] + 1;
+					break;
+				}
+			}
+		}
+
+		for(int i=0;i<arr.length;i++) {
+			if(twodim[1][i] != 0) {
+				System.out.println(twodim[0][i] +" - "+ twodim [1][i]);
+			}
+		}
+	}
+}
