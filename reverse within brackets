@@ -1,0 +1,33 @@
+public class checkloop {
+	public static void main(String[] args) {
+		String input = "(abc((ab)a))";
+		char arr[] = input.toCharArray();
+		int start = 0, end = 0;
+
+		int length = arr.length;
+		for (int i = length - 1; i >= 0; i--) {
+			if (arr[i] == '(') {
+				start = i + 1;
+				for (int j = i; j < length; j++) {
+					if (arr[j] == ')') {
+						end = j - 1;
+						arr[i] = '#';
+						arr[j] = '#';
+						break;
+					}
+				}
+				for (int k = start, l = end; k < l; k++, l--) {
+					char temp = arr[k];
+					arr[k] = arr[l];
+					arr[l] = temp;
+				}
+			}
+		}
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] != '#') {
+				System.out.print(arr[i]);
+			}
+		}
+
+	}
+}
