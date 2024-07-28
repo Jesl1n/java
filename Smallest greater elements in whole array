@@ -1,0 +1,95 @@
+Smallest greater elements in whole array
+
+Given an array A of N length. We need to calculate the next smallest greater element for each element in a given array. If the next greater element is not available in a given array then we need to fill -10000000 at that index place.
+
+Example 1:
+
+Input : arr[] = {13, 6, 7, 12}
+Output : _ 7 12 13 
+Explanation:
+Here, at index 0, 13 is the greatest value 
+in given array and no other array element 
+is greater from 13. So at index 0 we fill 
+'-10000000'.
+
+Example 2:
+
+Input : arr[] = {6, 3, 9, 8, 10, 2, 1, 15, 7} 
+Output :  7 6 10 9 15 3 2 _ 8
+Explanation: Here, at index 7, 15 is the greatest
+value in given array and no other array element is
+greater from 15. So at index 7 we fill '-10000000'.
+
+
+
+
+package paranthesis;
+
+public class NextGreaterElement {
+
+	public static int[] greaterElement (int input[], int n) {
+		int arr[] = new int[input.length];
+		for(int i=0;i<input.length;i++){
+			arr[i]=input[i];
+		}
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = 0; j < arr.length - i - 1; j++) {
+				if (arr[j] > arr[j + 1]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+		System.out.println("sorted arr: ");
+		for(int i=0;i<arr.length;i++) {
+			System.out.format("%11s",arr[i] +"	");
+		}
+		System.out.println();
+		for (int i = 0; i < arr.length; i++) {
+			boolean found = false;
+			for (int j = 0; j < arr.length - 1; j++) {
+				if (input[i] == arr[j]) {
+					while(input[i] == arr[j] && j < arr.length -1) {
+						j++;
+					}
+					if(input[i] != arr[j]) {
+						input[i] = arr[j];
+						found = true;
+						break;
+					}
+				}
+			}
+			if (found==false) {
+				input[i] = -10000000;
+			}
+		}
+		return input;
+	}
+	public static void main(String[] args) {
+		//int arr [] = {6, 3, 9, 8, 10, 2, 1, 15, 7};
+//		int arr[] = {-12,-12,11,-7,17,14,-5,14,-19,15,7,-3,-2 };
+		int arr [] = {3,18,-9,14,20,9,17,-14,-2,-4,18,3,12,6,3,-16,-17,17,8,15,20};
+		
+		System.out.println("index: ");
+		for(int i=0;i<arr.length;i++) {
+			System.out.format("%11s",i +"	");
+		}
+		System.out.println();
+
+		
+		System.out.println("input: ");
+		for(int i=0;i<arr.length;i++) {
+			System.out.format("%11s",arr[i] +"	");
+		}
+		System.out.println();
+
+                    //6 20 -4 15 _ 12 18 -9 3 -2 20 6 14 8 6 -14 -16 18 9 17 _
+		int output []  = greaterElement(arr, arr.length);
+		System.out.println("output: ");
+		for(int i=0;i<output.length;i++) {
+			System.out.format("%11s",output[i] +"	");
+		}
+		System.out.println();
+	}
+}
