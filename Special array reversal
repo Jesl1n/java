@@ -1,0 +1,65 @@
+Special array reversal
+Difficulty: EasyAccuracy: 40.46%Submissions: 18K+Points: 2
+Given a string S, containing special characters and all the alphabets, reverse the string without
+affecting the positions of the special characters.
+
+Example 1:
+
+Input: S = "A&B"
+Output: "B&A"
+Explanation: As we ignore '&' and
+then reverse, so answer is "B&A".
+Example 2:
+
+Input: S = "A&x#
+Output: "x&A#"
+Explanation: we swap only A and x.
+
+package Training;
+
+public class ReverseLettersOnly {
+
+    public static void main(String[] args) {
+//        String input = "#####SD#"; //Output: #####DS#
+//        String input = "##DS####"; //Output: ##SD####
+//        String input = "#DA#####"; //Output: #AD#####
+//        String input = "###DA###"; //Output: ###AD###
+//        String input = "####DA##"; //Output: ####AD##
+//        String input = "#####DA#"; //Output: #####AD#
+//        String input = "######DA"; //Output: ######DA
+        String input = "###SABAR#I##"; //Output: ###IRABA#S##
+        char[] arr = input.toCharArray();
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+             while (isAlpha(arr[start])==false) {
+                start++;
+            }
+            
+             while ( isAlpha(arr[end])==false) {
+                end--;
+            }
+            
+              if (start < end) {
+                char temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            }
+        }
+
+        System.out.println(arr); 
+    }
+
+  
+    public static boolean isAlpha(char x) {
+        if((x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z')){
+        	return true;
+        }
+        else{
+        	return false;
+        }
+    }
+}
